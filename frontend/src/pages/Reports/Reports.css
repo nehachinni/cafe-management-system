@@ -1,0 +1,51 @@
+.report-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 6px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.report-tab {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+  font-family: var(--font-sans);
+}
+
+.report-tab:hover { background: var(--bg); color: var(--text-primary); }
+.report-tab.active { background: var(--primary); color: #fff; }
+
+.report-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.report-month-card {
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+.report-month-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .report-summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .report-summary-grid { grid-template-columns: 1fr; }
+  .report-tabs { gap: 2px; }
+  .report-tab { flex: none; font-size: 12px; padding: 7px 12px; }
+}

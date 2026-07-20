@@ -1,0 +1,151 @@
+.billing-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+.bill-preview {
+  padding: 32px;
+  font-size: 14px;
+}
+
+.bill-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.bill-cafe-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.bill-cafe-info p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.bill-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.bill-meta-row {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.bill-meta-row span {
+  color: var(--text-secondary);
+  min-width: 60px;
+}
+
+.bill-meta-row strong {
+  color: var(--text-primary);
+}
+
+.bill-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.bill-items-table th {
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border);
+}
+
+.bill-items-table td {
+  padding: 10px 10px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.bill-totals {
+  max-width: 300px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bill-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.bill-total-row.discount {
+  color: var(--success);
+}
+
+.bill-total-row.grand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bill-footer {
+  margin-top: 24px;
+  text-align: center;
+  border-top: 1px dashed var(--border);
+  padding-top: 16px;
+}
+
+.bill-footer p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.billing-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .billing-layout {
+    grid-template-columns: 1fr;
+  }
+  .bill-header {
+    grid-template-columns: 1fr;
+  }
+  .bill-meta {
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .billing-actions { display: none; }
+  .billing-layout {
+    display: block;
+    gap: 0;
+  }
+  .bill-preview {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 12px;
+  }
+  @page {
+    margin: 12mm;
+  }
+}

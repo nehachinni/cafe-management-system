@@ -1,0 +1,106 @@
+.table-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-item {
+  flex: 1;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.summary-count {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.summary-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.summary-available .summary-count { color: var(--success); }
+.summary-occupied .summary-count { color: var(--error); }
+.summary-reserved .summary-count { color: var(--warning); }
+
+.cafe-floor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.cafe-table {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all var(--transition);
+}
+
+.cafe-table:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.cafe-table-available { border-color: #86EFAC; }
+.cafe-table-occupied { border-color: #FCA5A5; }
+.cafe-table-reserved { border-color: #FCD34D; }
+
+.cafe-table-available { background: #F0FDF4; }
+.cafe-table-occupied { background: #FEF2F2; }
+.cafe-table-reserved { background: #FFFBEB; }
+
+.cafe-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cafe-table-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cafe-table-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.cafe-table-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cafe-table-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cafe-table-status-select {
+  font-size: 12px;
+  padding: 6px 28px 6px 10px;
+  background-color: var(--bg-card);
+}
+
+@media (max-width: 640px) {
+  .table-summary { flex-direction: column; }
+  .cafe-floor { grid-template-columns: repeat(2, 1fr); }
+}

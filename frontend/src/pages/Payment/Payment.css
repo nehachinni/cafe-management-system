@@ -1,0 +1,116 @@
+.payment-layout { }
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.payment-method-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+.payment-method-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-50);
+}
+.payment-method-btn.active {
+  border-color: var(--primary);
+  background: var(--primary-100);
+  color: var(--primary-dark);
+}
+
+.cash-calc {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cash-calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.cash-calc-row.change { color: var(--text-primary); }
+.cash-calc-row.change.positive strong { color: var(--success); }
+.cash-calc-row strong { color: var(--text-primary); }
+
+/* Success state */
+.payment-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 32px;
+}
+
+.success-icon {
+  color: var(--success);
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.payment-success h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.payment-success p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.success-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 12px 0;
+}
+
+.change-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--success-light);
+  color: var(--success-text);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.change-display strong { font-size: 20px; font-weight: 700; }
+
+@media (max-width: 900px) {
+  .payment-grid { grid-template-columns: 1fr; }
+}
